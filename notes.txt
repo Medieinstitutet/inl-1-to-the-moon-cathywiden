@@ -1,0 +1,9 @@
+known issues
+
+1. menu won't close
+2. menu page justify-content: space-evenly won't apply, the three menu points won't spread along the screen height
+3. boxy text: padding/margin impossible to set or control, padding no worky, padding-inline no worky, ...
+4. hamburger menu middle line used to move sideways on hover butt by adding the pointer-events: none, this broke
+5. hambuerger menu also used to turn poink on hover just because I misread the instructions..., well now that's broken too due to pointer-eents: none in .hamburger
+6. there should be an intended hover action over the menu lines which should invoke an underline but no worky
+7. overlay menu should disappear - in my mind - once I'm scrolling over the second page (space background)
