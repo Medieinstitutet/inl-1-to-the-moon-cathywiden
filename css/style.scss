@@ -6,7 +6,8 @@
     width: 40px;
     height: 40px;
     background-color: transparent;
-    cursor: pointer; /*I think pointer-events broke the pink hover now*/    
+    cursor: pointer;
+    /*I think pointer-events broke the pink hover now*/
     z-index: 2;
     pointer-events: none;
 }
@@ -22,6 +23,7 @@ button span {
     right: 0;
     transition: all 0.7s ease-in-out;
 }
+
 button:hover span:nth-child(2) {
     position: relative;
     right: 5px;
@@ -37,20 +39,22 @@ input {
     opacity: 0;
 }
 
-input:checked + .menu button span {
+input:checked+.menu button span {
     position: absolute;
     transition: all 0.3s ease-in-out;
 }
 
-input:checked + .menu button span:nth-child(2) {
+input:checked+.menu button span:nth-child(2) {
     opacity: 0;
 }
-input:checked + .menu button span:nth-child(1) {
+
+input:checked+.menu button span:nth-child(1) {
     transform: rotate(45deg);
-} 
-input:checked + .menu button span:nth-child(3) {
+}
+
+input:checked+.menu button span:nth-child(3) {
     transform: rotate(-45deg);
-} 
+}
 
 .navbar {
     position: fixed;
@@ -64,9 +68,10 @@ input:checked + .menu button span:nth-child(3) {
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
-    
+
 }
-input:checked + .menu .navbar {
+
+input:checked+.menu .navbar {
     visibility: visible;
     opacity: 1;
 }
@@ -90,10 +95,9 @@ ul {
 }
 
 .navbar .underline:hover {
-	text-decoration:underline;
-	text-decoration-color:rgb(210, 0, 162); 
-	
-	transition:background-size 500ms ease-in-out;
+    text-decoration: underline;
+    text-decoration-color: rgb(210, 0, 162);
+    transition: background-size 500ms ease-in-out;
 }
 
 
@@ -105,7 +109,10 @@ ul {
     min-height: 100vh;
 }
 
-a:link { color: rgb(210, 0, 162); font-weight: 400;}
+a:link {
+    color: rgb(210, 0, 162);
+    font-weight: 400;
+}
 
 
 
@@ -120,9 +127,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
 .text-page {
     background-image: url(../images/space.jpg);
     background-size: cover;
-    float: left; /* ? */
-    padding: 5%; /* ? */
-
+    padding-left: 20px;
 }
 
 /*-----BOX ON FRONT PAGE ---*/
@@ -137,6 +142,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
     padding: 15px;
     font-family: 'Rubik', sans-serif;
 }
+
 .astronaut .to-the-moon-box .text {
     text-align: center;
     text-transform: uppercase;
@@ -146,22 +152,25 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
 }
 
 /* 2-COLUMN LAYOUT */
-
+/* 
+*{
+    box-sizing: border-box;
+}
+ */
 
 .columns {
     float: left;
-    width: 50%; 
+    width: 48%;  
     min-height: 300px;
- /*to prevent text from spilling over */
     font-weight: 100;
     font-family: 'Rubik';
     color: white;
 }
 
 .rows {
-    display: flex;
-    gap: 40px;
-} 
+    // display: flex; /*Problem is that display: flex breaks the 2-column layout in mobile mode! the second column vanishes.*/
+    // gap: 20px;
+ } 
 
 .rows:after {
     content: "";
@@ -175,50 +184,52 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
     .columns {
         width: 100%;
     }
+
     .persistence {
         display: none;
     }
+
     .fit-picture {
         display: none;
     }
-    }   
+}
 
-    .span {
-        display: block; 
-    }
-    
-    .space {
-        font-size: 3.8em;
-        margin-top: 0.1em;
-        margin-bottom: 0.1em;
-        margin-left: 30px;
-        margin-right: 0;
-        text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
-        z-index: 2;     
-    }
+.span {
+    display: block;
+}
 
-    .ventures {
-        font-size: 5em;
-        font-family: 'Times New Roman', Times, serif;
-        opacity: 0.60;
-        margin-top: 0em;
-        margin-bottom: 0em;
-        margin-left: 75px;
-        margin-right: 0;
-        position: relative;
-        display: inline-block;
-        top: -58px;     
-        z-index: 1;   
-    }
+.space {
+    font-size: 3.8em;
+    margin-top: 0.1em;
+    margin-bottom: 0.1em;
+    margin-left: 30px;
+    margin-right: 0;
+    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
 
-    blockquote {
-        font-style: italic;
-        margin-top: 0em;
-        margin-left: 10%;
-        margin-right: 10%;
-        font-size: 1.3em;
-        
-    }
+.ventures {
+    font-size: 5em;
+    font-family: 'Times New Roman', Times, serif;
+    opacity: 0.60;
+    margin-top: 0em;
+    margin-bottom: 0em;
+    margin-left: 75px;
+    margin-right: 0;
+    position: relative;
+    display: inline-block;
+    top: -58px;
+    z-index: 1;
+}
+
+blockquote {
+    font-style: italic;
+    margin-top: 0em;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 1.3em;
+
+}
 
 
 
@@ -233,8 +244,9 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         margin-left: 0;
         margin-right: 0;
         font-weight: bold;
-        text-shadow: 3px 3px black;     
+        text-shadow: 3px 3px black;
     }
+
     .ventures {
         font-size: 3em;
         opacity: 0.5;
@@ -244,7 +256,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         position: relative;
         top: -40px;
         font-weight: bold;
-        font-family: 'Times New Roman', Times, serif;   
+        font-family: 'Times New Roman', Times, serif;
     }
 
 
@@ -254,7 +266,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         margin-bottom: 0.83em;
         font-weight: bold;
     }
- 
+
     blockquote {
         font-style: italic;
         margin-top: 0em;
@@ -275,11 +287,11 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    
+
     /* Major Tom's image */
     .fit-picture {
         background-image: url("../images/major_tom.jpg");
-        background-repeat: no-repeat; 
+        background-repeat: no-repeat;
         background-size: contain;
         height: 120px;
         width: 80px;
@@ -288,11 +300,11 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         margin-left: 15px;
         transform: rotate(5deg);
         float: right;
-     }
+    }
 
     button:hover span:nth-child(-n+3) {
         position: relative;
-        background-color: rgb(210, 0, 162); 
+        background-color: rgb(210, 0, 162);
         /*Converted the given 17-100-36-1 CMYK to RGB via https://www.ginifab.com/feeds/pms/cmyk_to_hex.html */
     }
 
@@ -301,7 +313,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         font-weight: 850;
         padding: 15px;
     }
-   
+
     .astronaut .to-the-moon-box .link {
         text-align: right;
         font-weight: 200;
@@ -309,14 +321,16 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
         bottom: 10px;
         right: 20px;
     }
+
     .astronaut .to-the-moon-box .link span {
         position: relative;
         left: 0px;
         transition: left 0.75s cubic-bezier(0.65, 0, 0.35, 1);
     }
+
     .astronaut .to-the-moon-box .link:hover span {
         left: 15px;
-    }    
+    }
 }
 
 /* FOOTER-COOKIE BANNER */
@@ -333,7 +347,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
     font-family: 'Rubik';
     justify-content: space-between;
     padding: 5px;
-    color: rgb(210, 0, 162); 
+    color: rgb(210, 0, 162);
     background-color: rgb(8, 8, 14);
 }
 
@@ -341,6 +355,7 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
     display: inline-block;
     padding: 0 20px;
 }
+
 .cookie-banner.disable {
     display: none;
 }
@@ -361,5 +376,3 @@ a:link { color: rgb(210, 0, 162); font-weight: 400;}
     border-color: rgb(6, 6, 109);
     cursor: pointer;
 }
-
- 
