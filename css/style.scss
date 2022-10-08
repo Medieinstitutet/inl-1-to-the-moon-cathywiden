@@ -72,13 +72,14 @@ input:checked + .menu .navbar {
 }
 
 ul {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     height: 100%;
+    max-width: 70%;
     justify-content: space-evenly;
     text-align: center;
     text-transform: uppercase;
