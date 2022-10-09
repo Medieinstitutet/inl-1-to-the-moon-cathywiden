@@ -7,12 +7,10 @@
     height: 40px;
     background-color: transparent;
     cursor: pointer;
-    /*I think pointer-events broke the pink hover now*/
     z-index: 2;
-    pointer-events: none;
 }
 
-button span {
+.hamburger span {
     width: 40px;
     height: 4px;
     margin-bottom: 6px;
@@ -24,7 +22,7 @@ button span {
     transition: all 0.7s ease-in-out;
 }
 
-button:hover span:nth-child(2) {
+.hamburger:hover span:nth-child(2) {
     position: relative;
     right: 5px;
 }
@@ -68,7 +66,6 @@ input:checked+.menu button span:nth-child(3) {
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1;
-
 }
 
 input:checked+.menu .navbar {
@@ -95,8 +92,7 @@ ul {
 }
 
 .navbar .underline:hover {
-    text-decoration: underline;
-    text-decoration-color: rgb(210, 0, 162);
+    border-bottom: 5px solid rgb(210, 0, 162);
     transition: background-size 500ms ease-in-out;
 }
 
@@ -114,6 +110,12 @@ a:link {
     font-weight: 400;
 }
 
+.columns {
+    min-height: 300px;
+    font-weight: 100;
+    font-family: 'Rubik';
+    color: white;
+}
 
 
 /*----PAGE BACKGROUND---*/
@@ -151,32 +153,8 @@ a:link {
     margin-bottom: 25px;
 }
 
-/* 2-COLUMN LAYOUT */
-/* 
-*{
-    box-sizing: border-box;
-}
- */
 
-.columns {
-    float: left;
-    width: 48%;  
-    min-height: 300px;
-    font-weight: 100;
-    font-family: 'Rubik';
-    color: white;
-}
 
-.rows {
-    // display: flex; /*Problem is that display: flex breaks the 2-column layout in mobile mode! the second column vanishes.*/
-    // gap: 20px;
- } 
-
-.rows:after {
-    content: "";
-    display: grid;
-    clear: both;
-}
 
 /*--------MOBILE VIEW------*/
 
@@ -192,50 +170,116 @@ a:link {
     .fit-picture {
         display: none;
     }
+
+    .space, .ventures {
+        position: relative;
+        display: block;
+    }
+
+    .span {
+        display: block;
+    }
+
+    .space {
+        font-size: 3.8em;
+        position: relative;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 30px;
+        margin-right: 0;
+        text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
+        z-index: 2;
+    }
+
+    .ventures {
+        font-size: 5em;
+        font-family: 'Times New Roman', Times, serif;
+        opacity: 0.60;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 75px;
+        margin-right: 0;
+        position: relative;
+        display: inline-block;
+        top: -58px;
+        z-index: 1;
+    }
+
+    blockquote {
+        font-style: italic;
+        margin-top: 0em;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1.3em;
+    }
+    }
+
+/* FOOTER-COOKIE BANNER */
+
+.cookie-banner {
+    box-sizing: border-box;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 0.75rem;
+    font-family: 'Rubik';
+    justify-content: space-between;
+    padding: 5px;
+    color: rgb(210, 0, 162);
+    background-color: rgb(8, 8, 14);
+    z-index: 999;
 }
 
-.span {
-    display: block;
-}
-
-.space {
-    font-size: 3.8em;
-    margin-top: 0.1em;
-    margin-bottom: 0.1em;
-    margin-left: 30px;
-    margin-right: 0;
-    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
-    z-index: 2;
-}
-
-.ventures {
-    font-size: 5em;
-    font-family: 'Times New Roman', Times, serif;
-    opacity: 0.60;
-    margin-top: 0em;
-    margin-bottom: 0em;
-    margin-left: 75px;
-    margin-right: 0;
-    position: relative;
+.cookie-text {
     display: inline-block;
-    top: -58px;
-    z-index: 1;
+    padding: 0 20px;
 }
 
-blockquote {
-    font-style: italic;
-    margin-top: 0em;
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: 1.3em;
-
+.cookie-banner.disable {
+    display: none;
 }
 
+.acceptCookie {
+    position: relative;   
+    bottom: 4px;       
+    right: 12px;
+    align-items: flex-end;
+    display: flex;
+    background-color: rgb(13, 13, 73);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    justify-content: space-around;
+    border: 1px solid;
+    border-color: rgb(6, 6, 109);
+    cursor: pointer;
+}
 
 
 /*----TABLET & DESKTOP VIEW----*/
 
 @media screen and (min-width: 640px) {
+
+    .rows {
+    display: flex; 
+    gap: 40px;
+    }  
+
+    .columns {
+        float: left;
+        width: 50%;  
+    }
+    
+    .rows:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
 
     .space {
         font-size: 2.5em;
@@ -288,7 +332,6 @@ blockquote {
         -webkit-text-fill-color: transparent;
     }
 
-    /* Major Tom's image */
     .fit-picture {
         background-image: url("../images/major_tom.jpg");
         background-repeat: no-repeat;
@@ -300,12 +343,6 @@ blockquote {
         margin-left: 15px;
         transform: rotate(5deg);
         float: right;
-    }
-
-    button:hover span:nth-child(-n+3) {
-        position: relative;
-        background-color: rgb(210, 0, 162);
-        /*Converted the given 17-100-36-1 CMYK to RGB via https://www.ginifab.com/feeds/pms/cmyk_to_hex.html */
     }
 
     .astronaut .to-the-moon-box {
@@ -333,46 +370,3 @@ blockquote {
     }
 }
 
-/* FOOTER-COOKIE BANNER */
-
-.cookie-banner {
-    box-sizing: border-box;
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 0.75rem;
-    font-family: 'Rubik';
-    justify-content: space-between;
-    padding: 5px;
-    color: rgb(210, 0, 162);
-    background-color: rgb(8, 8, 14);
-}
-
-.cookie-text {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.cookie-banner.disable {
-    display: none;
-}
-
-.acceptCookie {
-    position: relative;   
-    bottom: 4px;       
-    right: 12px;
-    align-items: flex-end;
-    display: flex;
-    background-color: rgb(13, 13, 73);
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 5px;
-    justify-content: space-around;
-    border: 1px solid;
-    border-color: rgb(6, 6, 109);
-    cursor: pointer;
-}
