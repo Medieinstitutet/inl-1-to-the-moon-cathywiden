@@ -127,7 +127,7 @@ a:link {
 }
 
 .text-page {
-    background-image: url(../images/space.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/space.jpg);
     background-size: cover;
     padding-left: 20px;
 }
