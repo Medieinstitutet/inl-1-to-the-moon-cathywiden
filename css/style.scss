@@ -148,6 +148,8 @@ a:link {
     margin-bottom: 25px;
 }
 
+/* White arrow pointing down*/
+
 .arrow-down {
     position: absolute;
     bottom: 15px;
@@ -172,14 +174,15 @@ a:link {
       bottom: 10px;
     }
     to {
-      bottom: 40px;
+      bottom: 50px;
     }
 }
+
 
 /*--------MOBILE VIEW------*/
 
 @media screen and (max-width: 640px) {
-    
+
 
     .columns {
         width: 100%;
@@ -193,7 +196,8 @@ a:link {
         display: none;
     }
 
-    .space, .ventures {
+    .space,
+    .ventures {
         position: relative;
         display: block;
     }
@@ -353,6 +357,7 @@ a:link {
         float: right;
     }
 }
+
 /* FOOTER-COOKIE BANNER */
 
 .cookie-banner {
