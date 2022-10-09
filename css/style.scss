@@ -166,7 +166,6 @@ a:link {
 
 .arrow-down span {
     display: block;
-    transform: rotate(90deg);
 }
 
 @keyframes bounce {
@@ -239,35 +238,33 @@ a:link {
         margin-right: 10%;
         font-size: 1.3em;
     }
+    .quote:before {
+        content: open-quote;
+        font-weight: bold;
+        // color: rgb(233, 25, 25);
+        // opacity: 35%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 10;
+/*      top: 0px; 
+        left: 0px; */
+    }
+
+    .quote:after {
+        content: close-quote;
+        font-weight: bold;
+        // color: rgb(217, 31, 31);
+        // opacity: 35%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 10;
+/*      bottom: 0px;
+        right: 0px; */
+    }
 
 }
-
-.quote:before {
-    content: open-quote;
-    font-weight: bold;
-    color: white;
-    opacity: 35%;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 3rem;
-    position: absolute;
-    z-index: 0;
-    top: -40px;
-    left: -40px;
-}
-
-.quote:after {
-    content: close-quote;
-    font-weight: bold;
-    color: white;
-    opacity: 35%;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 3rem;
-    position: absolute;
-    z-index: 0;
-    bottom: 15px;
-    right: 15px;
-}
-
 
 /*----TABLET & DESKTOP VIEW----*/
 

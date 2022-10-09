@@ -4,3 +4,6 @@
 [x] cookie bar text glow for all browsers
 [x] screenshots
 [x] validate
+
+- iPad skrinschåtts are horrendous tbh
+- no time to fix "blockquote"
