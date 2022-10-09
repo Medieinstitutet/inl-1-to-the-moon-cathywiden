@@ -1,6 +1,0 @@
-[x] solve text-shadow/underline conflict https://stackoverflow.com/questions/9979320/text-decorationnone-and-text-shadow-conflict
-[x] menu pink hover only in desktop view
-[x] fix all z-indices
-[x] cookie bar text glow for all browsers
-[x] screenshots
-[x] validate

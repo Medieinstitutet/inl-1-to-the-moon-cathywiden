@@ -155,7 +155,7 @@ a:link {
     bottom: 15px;
     text-align: center;
     color: white;
-    font-family: Verdana,Tahoma, sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     width: 100%;
     font-size: 1.6rem;
     animation-name: bounce;
@@ -171,10 +171,11 @@ a:link {
 
 @keyframes bounce {
     from {
-      bottom: 10px;
+        bottom: 20px;
     }
+
     to {
-      bottom: 50px;
+        bottom: 60px;
     }
 }
 
@@ -231,16 +232,41 @@ a:link {
         z-index: 0;
     }
 
-    blockquote {
+    .quote {
         font-style: italic;
         margin-top: 0em;
         margin-left: 10%;
         margin-right: 10%;
         font-size: 1.3em;
     }
+
 }
 
+.quote:before {
+    content: open-quote;
+    font-weight: bold;
+    color: white;
+    opacity: 35%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    position: absolute;
+    z-index: 0;
+    top: -40px;
+    left: -40px;
+}
 
+.quote:after {
+    content: close-quote;
+    font-weight: bold;
+    color: white;
+    opacity: 35%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    position: absolute;
+    z-index: 0;
+    bottom: 15px;
+    right: 15px;
+}
 
 
 /*----TABLET & DESKTOP VIEW----*/
@@ -287,7 +313,7 @@ a:link {
         left: 0px;
         z-index: 3;
         display: inline-block;
-        transition: left 1s cubic-bezier(0.215, 0.610, 0.355, 1) ease;
+        transition: left 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
     }
 
     .astronaut .to-the-moon-box .link:hover span {
@@ -323,7 +349,7 @@ a:link {
         font-weight: bold;
     }
 
-    blockquote {
+    .quote {
         font-style: italic;
         margin-top: 0em;
         font-size: 1.5em;
