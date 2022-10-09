@@ -91,10 +91,6 @@ ul {
     text-shadow: 5px 5px 5px rgba(51, 48, 48, 0.5);
 }
 
-.navbar .underline:hover {
-    border-bottom: 5px solid rgb(210, 0, 162);
-    transition: background-size 500ms ease-in-out;
-}
 
 
 
@@ -264,6 +260,11 @@ a:link {
 
 @media screen and (min-width: 640px) {
 
+    .navbar .underline:hover {
+        border-bottom: 5px solid rgb(210, 0, 162);
+        transition: background-size 500ms ease-in-out;
+    }
+
     .rows {
     display: flex; 
     gap: 40px;
@@ -278,6 +279,30 @@ a:link {
         content: "";
         display: table;
         clear: both;
+    }
+
+    .astronaut .to-the-moon-box {
+        width: 11rem;
+        font-weight: 850;
+        padding: 15px;
+    }
+
+    .astronaut .to-the-moon-box .link {
+        text-align: right;
+        font-weight: 200;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .astronaut .to-the-moon-box .link span {
+        position: relative;
+        left: 0px;
+        transition: left 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .astronaut .to-the-moon-box .link:hover span {
+        transform: translateX(50%);
     }
 
 
@@ -343,30 +368,6 @@ a:link {
         margin-left: 15px;
         transform: rotate(5deg);
         float: right;
-    }
-
-    .astronaut .to-the-moon-box {
-        width: 11rem;
-        font-weight: 850;
-        padding: 15px;
-    }
-
-    .astronaut .to-the-moon-box .link {
-        text-align: right;
-        font-weight: 200;
-        position: absolute;
-        bottom: 10px;
-        right: 20px;
-    }
-
-    .astronaut .to-the-moon-box .link span {
-        position: relative;
-        left: 0px;
-        transition: left 0.75s cubic-bezier(0.65, 0, 0.35, 1);
-    }
-
-    .astronaut .to-the-moon-box .link:hover span {
-        left: 15px;
     }
 }
 
