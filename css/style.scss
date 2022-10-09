@@ -91,11 +91,7 @@ ul {
     text-shadow: 5px 5px 5px rgba(51, 48, 48, 0.5);
 }
 
-
-
-
 /*---GENERAL---*/
-
 
 .full-height {
     min-height: 100vh;
@@ -114,21 +110,23 @@ a:link {
 }
 
 
-/*----PAGE BACKGROUND---*/
+/*----PAGES' BACKGROUND IMAGES---*/
 
 .astronaut {
     background-image: url(../images/astronaut.jpg);
     background-size: cover;
     background-position: 50% 50%;
+    overflow: hidden;
 }
 
 .text-page {
     background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/space.jpg);
     background-size: cover;
     padding-left: 20px;
+    overflow: hidden;
 }
 
-/*-----BOX ON FRONT PAGE ---*/
+/*-----"MOON" BOX ON FRONT PAGE ---*/
 
 .astronaut .to-the-moon-box {
     border: 3px solid black;
@@ -148,9 +146,6 @@ a:link {
     font-weight: 700;
     margin-bottom: 25px;
 }
-
-
-
 
 /*--------MOBILE VIEW------*/
 
@@ -263,6 +258,7 @@ a:link {
     .navbar .underline:hover {
         border-bottom: 5px solid rgb(210, 0, 162);
         transition: background-size 500ms ease-in-out;
+        // menu hover pink lines only in desktop view
     }
 
     .rows {
@@ -305,7 +301,6 @@ a:link {
         transform: translateX(50%);
     }
 
-
     .space {
         font-size: 2.5em;
         margin-top: 0.1em;
@@ -328,11 +323,10 @@ a:link {
         font-family: 'Times New Roman', Times, serif;
     }
 
-
     h3 {
         font-size: 1.5em;
         margin-top: 0em;
-        margin-bottom: 0.83em;
+        margin-bottom: 0.8em;
         font-weight: bold;
     }
 
