@@ -1,0 +1,432 @@
+.hamburger {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.hamburger span {
+    width: 40px;
+    height: 4px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    display: block;
+    background-color: black;
+    position: relative;
+    right: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+.hamburger:hover span:nth-child(2) {
+    position: relative;
+    right: 8px;
+}
+
+input {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 6;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+}
+
+input:checked+.menu button span {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+}
+
+input:checked+.menu button span:nth-child(2) {
+    opacity: 0;
+}
+
+input:checked+.menu button span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+input:checked+.menu button span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.navbar {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.80);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 3;
+}
+
+input:checked+.menu .navbar {
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
+}
+
+ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+    max-width: 70%;
+    justify-content: space-evenly;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Rubik";
+    font-weight: bold;
+    font-size: 3rem;
+    text-shadow: 5px 5px 5px rgba(51, 48, 48, 0.5);
+}
+
+/*---GENERAL---*/
+
+.full-height {
+    min-height: 100vh;
+}
+
+a:link {
+    color: rgb(210, 0, 162);
+    font-weight: 400;
+}
+
+.columns {
+    min-height: 300px;
+    font-weight: 100;
+    font-family: 'Rubik';
+    color: white;
+}
+
+
+/*----PAGES' BACKGROUND IMAGES---*/
+
+.astronaut {
+    background-image: url(../images/astronaut.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+
+.text-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/space.jpg);
+    background-size: cover;
+    padding-left: 20px;
+    overflow: hidden;
+}
+
+/*-----"MOON" BOX ON FRONT PAGE ---*/
+
+.astronaut .to-the-moon-box {
+    border: 3px solid black;
+    width: 9.2rem;
+    background-color: rgb(255, 255, 255, 0.65);
+    position: absolute;
+    top: 75px;
+    left: 50px;
+    padding: 15px;
+    font-family: 'Rubik', sans-serif;
+}
+
+.astronaut .to-the-moon-box .text {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* White arrow pointing down*/
+
+.arrow-down {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Tahoma, sans-serif;
+    width: 100%;
+    font-size: 1.6rem;
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.arrow-down span {
+    display: block;
+}
+
+@keyframes bounce {
+    from {
+        bottom: 20px;
+    }
+
+    to {
+        bottom: 60px;
+    }
+}
+
+
+/*--------MOBILE VIEW------*/
+
+@media screen and (max-width: 640px) {
+
+
+    .columns {
+        width: 100%;
+    }
+
+    .persistence {
+        display: none;
+    }
+
+    .fit-picture {
+        display: none;
+    }
+
+    .space,
+    .ventures {
+        position: relative;
+        display: block;
+    }
+
+    .span {
+        display: block;
+    }
+
+    .space {
+        font-size: 3.8em;
+        position: relative;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 30px;
+        margin-right: 0;
+        text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
+        z-index: 1;
+    }
+
+    .ventures {
+        font-size: 5em;
+        font-family: 'Times New Roman', Times, serif;
+        opacity: 0.60;
+        margin-top: 0em;
+        margin-bottom: 0em;
+        margin-left: 75px;
+        margin-right: 0;
+        position: relative;
+        display: inline-block;
+        top: -58px;
+        z-index: 0;
+    }
+
+    .quote {
+        font-style: italic;
+        margin-top: 0em;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 1.3em;
+    }
+    .quote:before {
+        content: open-quote;
+        font-weight: bold;
+        // color: rgb(233, 25, 25);
+        // opacity: 35%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 10;
+/*      top: 0px; 
+        left: 0px; */
+    }
+
+    .quote:after {
+        content: close-quote;
+        font-weight: bold;
+        // color: rgb(217, 31, 31);
+        // opacity: 35%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 3rem;
+        position: absolute;
+        z-index: 10;
+/*      bottom: 0px;
+        right: 0px; */
+    }
+
+}
+
+/*----TABLET & DESKTOP VIEW----*/
+
+@media screen and (min-width: 640px) {
+
+    .navbar .underline:hover {
+        border-bottom: 5px solid rgb(210, 0, 162);
+        transition: background-size 500ms ease-in-out;
+    }
+
+    .rows {
+        display: flex;
+        gap: 40px;
+    }
+
+    .columns {
+        float: left;
+        width: 50%;
+    }
+
+    .rows:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .astronaut .to-the-moon-box {
+        width: 11rem;
+        font-weight: 850;
+        padding: 15px;
+    }
+
+    .astronaut .to-the-moon-box .link {
+        text-align: right;
+        font-weight: 200;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+
+    .astronaut .to-the-moon-box .link span {
+        position: relative;
+        left: 0px;
+        z-index: 3;
+        display: inline-block;
+        transition: left 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    .astronaut .to-the-moon-box .link:hover span {
+        transform: translateX(50%);
+    }
+
+    .space {
+        font-size: 3.8em;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+        text-shadow: 6px 6px 8px rgb(23, 19, 23);
+        z-index: 2;
+    }
+
+    .ventures {
+        font-size: 3.5em;
+        opacity: 0.5;
+        margin-left: 35px;
+        position: relative;
+        top: -55px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        z-index: 1;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin-top: 0em;
+        margin-bottom: 0.8em;
+        font-weight: bold;
+    }
+
+    .quote {
+        font-style: italic;
+        margin-top: 0em;
+        font-size: 1.5em;
+        max-width: 90%;
+    }
+
+    .persistence {
+        height: 40%;
+        opacity: 0.50;
+        font-size: 1.8em;
+        text-align: left;
+        font-style: italic;
+        margin-left: 5%;
+        margin-right: 20%;
+        background: linear-gradient(to top, #EC3098 0%, #FFCD45 50%, #EC3098 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .fit-picture {
+        background-image: url("../images/major_tom.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 120px;
+        width: 80px;
+        display: block;
+        margin-top: 15px;
+        margin-left: 15px;
+        transform: rotate(5deg);
+        float: right;
+    }
+}
+
+/* FOOTER-COOKIE BANNER */
+
+.cookie-banner {
+    box-sizing: border-box;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 0.75rem;
+    text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -webkit-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -moz-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -ms-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -o-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    font-family: 'Rubik';
+    justify-content: space-between;
+    padding: 5px;
+    color: rgb(210, 0, 162);
+    background-color: rgb(8, 8, 14);
+    z-index: 3;
+}
+
+.cookie-text {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.cookie-banner.disable {
+    display: none;
+}
+
+.acceptCookie {
+    position: relative;
+    bottom: 4px;
+    right: 12px;
+    align-items: flex-end;
+    display: flex;
+    background-color: rgb(13, 13, 73);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    justify-content: space-around;
+    border: 1px solid;
+    border-color: rgb(6, 6, 109);
+    cursor: pointer;
+}
