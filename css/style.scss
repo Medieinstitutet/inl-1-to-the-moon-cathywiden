@@ -7,13 +7,13 @@
     height: 40px;
     background-color: transparent;
     cursor: pointer;
-    z-index: 2;
+    z-index: 5;
 }
 
 .hamburger span {
     width: 40px;
     height: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     border-radius: 10px;
     display: block;
     background-color: black;
@@ -24,14 +24,14 @@
 
 .hamburger:hover span:nth-child(2) {
     position: relative;
-    right: 5px;
+    right: 8px;
 }
 
 input {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 3;
+    z-index: 6;
     width: 40px;
     height: 40px;
     opacity: 0;
@@ -65,12 +65,13 @@ input:checked+.menu button span:nth-child(3) {
     text-align: center;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1;
+    z-index: 3;
 }
 
 input:checked+.menu .navbar {
     visibility: visible;
     opacity: 1;
+    z-index: 4;
 }
 
 ul {
@@ -147,9 +148,39 @@ a:link {
     margin-bottom: 25px;
 }
 
+.arrow-down {
+    position: absolute;
+    bottom: 15px;
+    text-align: center;
+    color: white;
+    font-family: Verdana,Tahoma, sans-serif;
+    width: 100%;
+    font-size: 1.6rem;
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.arrow-down span {
+    display: block;
+    transform: rotate(90deg);
+}
+
+@keyframes bounce {
+    from {
+      bottom: 10px;
+    }
+    to {
+      bottom: 40px;
+    }
+}
+
 /*--------MOBILE VIEW------*/
 
 @media screen and (max-width: 640px) {
+    
+
     .columns {
         width: 100%;
     }
@@ -162,8 +193,7 @@ a:link {
         display: none;
     }
 
-    .space,
-    .ventures {
+    .space, .ventures {
         position: relative;
         display: block;
     }
@@ -180,7 +210,7 @@ a:link {
         margin-left: 30px;
         margin-right: 0;
         text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.9);
-        z-index: 2;
+        z-index: 1;
     }
 
     .ventures {
@@ -194,7 +224,7 @@ a:link {
         position: relative;
         display: inline-block;
         top: -58px;
-        z-index: 1;
+        z-index: 0;
     }
 
     blockquote {
@@ -206,50 +236,7 @@ a:link {
     }
 }
 
-/* FOOTER-COOKIE BANNER */
 
-.cookie-banner {
-    box-sizing: border-box;
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 0.75rem;
-    font-family: 'Rubik';
-    justify-content: space-between;
-    padding: 5px;
-    color: rgb(210, 0, 162);
-    background-color: rgb(8, 8, 14);
-    z-index: 999;
-}
-
-.cookie-text {
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.cookie-banner.disable {
-    display: none;
-}
-
-.acceptCookie {
-    position: relative;
-    bottom: 4px;
-    right: 12px;
-    align-items: flex-end;
-    display: flex;
-    background-color: rgb(13, 13, 73);
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 5px;
-    justify-content: space-around;
-    border: 1px solid;
-    border-color: rgb(6, 6, 109);
-    cursor: pointer;
-}
 
 
 /*----TABLET & DESKTOP VIEW----*/
@@ -294,7 +281,9 @@ a:link {
     .astronaut .to-the-moon-box .link span {
         position: relative;
         left: 0px;
-        transition: left 0.75s cubic-bezier(0.65, 0, 0.35, 1);
+        z-index: 3;
+        display: inline-block;
+        transition: left 1s cubic-bezier(0.215, 0.610, 0.355, 1) ease;
     }
 
     .astronaut .to-the-moon-box .link:hover span {
@@ -302,25 +291,25 @@ a:link {
     }
 
     .space {
-        font-size: 2.5em;
+        font-size: 3.8em;
         margin-top: 0.1em;
         margin-bottom: 0.1em;
         margin-left: 0;
         margin-right: 0;
         font-weight: bold;
-        text-shadow: 3px 3px black;
+        text-shadow: 6px 6px 8px rgb(23, 19, 23);
+        z-index: 2;
     }
 
     .ventures {
-        font-size: 3em;
+        font-size: 3.5em;
         opacity: 0.5;
-        margin-top: 0em;
-        margin-bottom: 0em;
-        margin-left: 20px;
+        margin-left: 35px;
         position: relative;
-        top: -40px;
+        top: -55px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
+        z-index: 1;
     }
 
     h3 {
@@ -363,4 +352,53 @@ a:link {
         transform: rotate(5deg);
         float: right;
     }
+}
+/* FOOTER-COOKIE BANNER */
+
+.cookie-banner {
+    box-sizing: border-box;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 0.75rem;
+    text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -webkit-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -moz-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -ms-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    -o-text-shadow: 0px 0px 6px rgba(242, 237, 237, 0.7);
+    font-family: 'Rubik';
+    justify-content: space-between;
+    padding: 5px;
+    color: rgb(210, 0, 162);
+    background-color: rgb(8, 8, 14);
+    z-index: 3;
+}
+
+.cookie-text {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.cookie-banner.disable {
+    display: none;
+}
+
+.acceptCookie {
+    position: relative;
+    bottom: 4px;
+    right: 12px;
+    align-items: flex-end;
+    display: flex;
+    background-color: rgb(13, 13, 73);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px;
+    justify-content: space-around;
+    border: 1px solid;
+    border-color: rgb(6, 6, 109);
+    cursor: pointer;
 }
