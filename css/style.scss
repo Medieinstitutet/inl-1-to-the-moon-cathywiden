@@ -61,7 +61,7 @@ input:checked+.menu button span:nth-child(3) {
     top: 0px;
     right: 0px;
     width: 100vw;
-    height: 100wh;
+    height: 100vh;
     text-align: center;
     opacity: 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -259,7 +259,6 @@ a:link {
     .navbar .underline:hover {
         border-bottom: 5px solid rgb(210, 0, 162);
         transition: background-size 500ms ease-in-out;
-        // menu hover pink lines only in desktop view
     }
 
     .rows {

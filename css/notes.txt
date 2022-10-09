@@ -1,2 +1,4 @@
 [x] solve text-shadow/underline conflict https://stackoverflow.com/questions/9979320/text-decorationnone-and-text-shadow-conflict
 [x] menu pink hover only in desktop view
+[x] screenshots
+[x] validate
