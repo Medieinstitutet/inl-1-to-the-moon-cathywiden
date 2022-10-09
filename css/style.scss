@@ -120,7 +120,7 @@ a:link {
 }
 
 .text-page {
-    background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/space.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/space.jpg);
     background-size: cover;
     padding-left: 20px;
     overflow: hidden;
@@ -162,7 +162,8 @@ a:link {
         display: none;
     }
 
-    .space, .ventures {
+    .space,
+    .ventures {
         position: relative;
         display: block;
     }
@@ -203,7 +204,7 @@ a:link {
         margin-right: 10%;
         font-size: 1.3em;
     }
-    }
+}
 
 /* FOOTER-COOKIE BANNER */
 
@@ -234,8 +235,8 @@ a:link {
 }
 
 .acceptCookie {
-    position: relative;   
-    bottom: 4px;       
+    position: relative;
+    bottom: 4px;
     right: 12px;
     align-items: flex-end;
     display: flex;
@@ -262,15 +263,15 @@ a:link {
     }
 
     .rows {
-    display: flex; 
-    gap: 40px;
-    }  
+        display: flex;
+        gap: 40px;
+    }
 
     .columns {
         float: left;
-        width: 50%;  
+        width: 50%;
     }
-    
+
     .rows:after {
         content: "";
         display: table;
@@ -364,4 +365,3 @@ a:link {
         float: right;
     }
 }
-
